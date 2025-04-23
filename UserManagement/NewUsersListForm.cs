@@ -107,26 +107,13 @@ namespace UserManagement
 
         private void createMySqlUser(string username, string password)
         {
-            string query = string.Format(
-                @"
-                DROP USER IF EXISTS `{0}`@`%`;
-                CREATE USER `{0}`@`%` IDENTIFIED BY '{1}';
-                GRANT USAGE ON *.* TO `{0}`;
-                GRANT ALL PRIVILEGES ON `{0}_%` . * TO `{0}`@`%`;
-                ",
-                 username,
-                 password
-                ).Replace('\n', ' ').Replace('\r', ' ');
+            string query =
+                "DROP USER IF EXISTS `{0}`@`%`;"+
+                "CREATE USER `{0}`@`%` IDENTIFIED BY '{1}';"+
+                "GRANT USAGE ON *.* TO `{0}`;"+
+                "GRANT ALL PRIVILEGES ON `{0}\\_%` . * TO `{0}`@`%`;";
 
-            string command = string.Format("/C mysql -uroot -e \"{0}\"", query);
-
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = string.Format("/C {0} -uroot -e \"{1}\"", Globals.mysqlFile, query);
-            process.StartInfo = startInfo;
-            process.Start();
+            Globals.mysqlQuery(string.Format(query, username, password));
         }
 
         private void okButton_Click(object sender, EventArgs e)

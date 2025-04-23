@@ -34,26 +34,11 @@ namespace UserManagement
                 listView1.Items.Add(new ListViewItem(new string[] { member.Name, member.DisplayName, member.Description }));
         }
 
-        private void deleteMySqlUser(string username)
-        {
-            string query = string.Format(@"DROP USER IF EXISTS `{0}`@`%`;", username);
-            string command = string.Format("/C mysql -uroot -e \"{0}\"", query);
-
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = string.Format("/C {0} -uroot -e \"{1}\"", Globals.mysqlFile, query);
-            process.StartInfo = startInfo;
-            process.Start();
-        }
-
-
         private void deleteButton_Click(object sender, EventArgs e)
         {
             if (listView1.CheckedItems.Count == 0)
             {
-                MessageBox.Show("Please select the user you want to delete.", "Select Users");
+                MessageBox.Show("Please select user(s).", "Select Users");
                 return;
             }
             DialogResult result = MessageBox.Show("Do you want to delete the selected users?", "Are You Shore?", MessageBoxButtons.YesNo);
@@ -68,7 +53,7 @@ namespace UserManagement
                         UserPrincipal user = UserPrincipal.FindByIdentity(Globals.context, item.Text);
                         string path = string.Format("{0}\\{1}\\{2}", Globals.wwwRoot, Globals.studentsGroupName, user.Name);
                         if (Directory.Exists(path)) Directory.Delete(path, true);
-                        deleteMySqlUser(user.Name);
+                        Globals.mysqlQuery(string.Format(@"DROP USER IF EXISTS `{0}`@`%`;", user.Name));
                         user.Delete();
                         statusbarProgressBar.Value++;
                     }
@@ -152,12 +137,18 @@ namespace UserManagement
                             UserPrincipal user = UserPrincipal.FindByIdentity(Globals.context, item.Text);
                             user.SetPassword(form.password);
                             user.Save();
+                            Globals.mysqlQuery(string.Format("ALTER USER `{0}`@`%` IDENTIFIED BY '{1}';", user.Name, form.password));
                             statusbarProgressBar.Value++;
                         }
                     }
-                    //todo: set mysql password
                 }
             }
+        }
+
+        private void aboutButton_Click(object sender, EventArgs e)
+        {
+            AboutForm form = new AboutForm();
+            form.ShowDialog();
         }
     }
 }

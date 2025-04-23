@@ -110,6 +110,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "NewUsersListForm";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Users List";
             this.Load += new System.EventHandler(this.AddUserForm_Load);

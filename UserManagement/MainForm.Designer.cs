@@ -34,18 +34,19 @@
             this.fromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usingPrefixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteButton = new System.Windows.Forms.ToolStripButton();
+            this.setPasswordButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsButton = new System.Windows.Forms.ToolStripButton();
             this.listView1 = new System.Windows.Forms.ListView();
             this.userName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusbarProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.setPasswordButton = new System.Windows.Forms.ToolStripButton();
             this.statusbarLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.statusbarProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.aboutButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,8 @@
             this.deleteButton,
             this.setPasswordButton,
             this.toolStripSeparator2,
-            this.settingsButton});
+            this.settingsButton,
+            this.aboutButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(584, 33);
@@ -84,14 +86,14 @@
             // fromFileToolStripMenuItem
             // 
             this.fromFileToolStripMenuItem.Name = "fromFileToolStripMenuItem";
-            this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.fromFileToolStripMenuItem.Text = "From File";
             this.fromFileToolStripMenuItem.Click += new System.EventHandler(this.fromFileToolStripMenuItem_Click);
             // 
             // usingPrefixToolStripMenuItem
             // 
             this.usingPrefixToolStripMenuItem.Name = "usingPrefixToolStripMenuItem";
-            this.usingPrefixToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usingPrefixToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.usingPrefixToolStripMenuItem.Text = "Using Prefix";
             this.usingPrefixToolStripMenuItem.Click += new System.EventHandler(this.usingPrefixToolStripMenuItem_Click);
             // 
@@ -106,6 +108,12 @@
             this.refreshButton.Text = "Refresh";
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
+            // 
             // deleteButton
             // 
             this.deleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -117,11 +125,29 @@
             this.deleteButton.Text = "Delete";
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // setPasswordButton
+            // 
+            this.setPasswordButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.setPasswordButton.Image = ((System.Drawing.Image)(resources.GetObject("setPasswordButton.Image")));
+            this.setPasswordButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.setPasswordButton.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
+            this.setPasswordButton.Name = "setPasswordButton";
+            this.setPasswordButton.Size = new System.Drawing.Size(30, 30);
+            this.setPasswordButton.Text = "setPassword";
+            this.setPasswordButton.Click += new System.EventHandler(this.setPasswordButton_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 33);
+            // 
             // settingsButton
             // 
             this.settingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.settingsButton.Image = ((System.Drawing.Image)(resources.GetObject("settingsButton.Image")));
             this.settingsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.settingsButton.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(30, 30);
             this.settingsButton.Text = "toolStripButton1";
@@ -169,38 +195,25 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // statusbarProgressBar
-            // 
-            this.statusbarProgressBar.Name = "statusbarProgressBar";
-            this.statusbarProgressBar.Size = new System.Drawing.Size(100, 16);
-            // 
-            // setPasswordButton
-            // 
-            this.setPasswordButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.setPasswordButton.Image = ((System.Drawing.Image)(resources.GetObject("setPasswordButton.Image")));
-            this.setPasswordButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.setPasswordButton.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
-            this.setPasswordButton.Name = "setPasswordButton";
-            this.setPasswordButton.Size = new System.Drawing.Size(30, 30);
-            this.setPasswordButton.Text = "setPassword";
-            this.setPasswordButton.Click += new System.EventHandler(this.setPasswordButton_Click);
-            // 
             // statusbarLabel
             // 
             this.statusbarLabel.Name = "statusbarLabel";
             this.statusbarLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // toolStripSeparator1
+            // statusbarProgressBar
             // 
-            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.statusbarProgressBar.Name = "statusbarProgressBar";
+            this.statusbarProgressBar.Size = new System.Drawing.Size(100, 16);
             // 
-            // toolStripSeparator2
+            // aboutButton
             // 
-            this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 33);
+            this.aboutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.aboutButton.Image = ((System.Drawing.Image)(resources.GetObject("aboutButton.Image")));
+            this.aboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.aboutButton.Name = "aboutButton";
+            this.aboutButton.Size = new System.Drawing.Size(30, 30);
+            this.aboutButton.Text = "toolStripButton1";
+            this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
             // MainForm
             // 
@@ -213,7 +226,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main Form";
+            this.Text = "Student User Management";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -242,6 +255,7 @@
         private System.Windows.Forms.ToolStripStatusLabel statusbarLabel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton aboutButton;
     }
 }
 

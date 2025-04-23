@@ -125,5 +125,20 @@ namespace UserManagement
                 ));
             Directory.SetAccessControl(usersWwwRoot, security1);
         }
+
+        // ------------------------------------------------------------------------------------------------------------
+        public static void mysqlQuery(string query)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            if(Globals.mysqlPassword == "")
+                startInfo.Arguments = string.Format("/C {0} -u{1} -e \"{2}\"", Globals.mysqlFile, Globals.mysqlUser, query);
+            else
+                startInfo.Arguments = string.Format("/C {0} -u{1} -p{2} -e \"{3}\"", Globals.mysqlFile, Globals.mysqlUser, Globals.mysqlPassword, query);
+            process.StartInfo = startInfo;
+            process.Start();
+        }
     }
 }
