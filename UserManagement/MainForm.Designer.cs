@@ -39,6 +39,7 @@
             this.setPasswordButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsButton = new System.Windows.Forms.ToolStripButton();
+            this.aboutButton = new System.Windows.Forms.ToolStripButton();
             this.listView1 = new System.Windows.Forms.ListView();
             this.userName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,7 +47,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusbarLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbarProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.aboutButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -133,7 +133,7 @@
             this.setPasswordButton.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
             this.setPasswordButton.Name = "setPasswordButton";
             this.setPasswordButton.Size = new System.Drawing.Size(30, 30);
-            this.setPasswordButton.Text = "setPassword";
+            this.setPasswordButton.Text = "Set Password";
             this.setPasswordButton.Click += new System.EventHandler(this.setPasswordButton_Click);
             // 
             // toolStripSeparator2
@@ -150,8 +150,18 @@
             this.settingsButton.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(30, 30);
-            this.settingsButton.Text = "toolStripButton1";
+            this.settingsButton.Text = "Settings";
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+            // 
+            // aboutButton
+            // 
+            this.aboutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.aboutButton.Image = ((System.Drawing.Image)(resources.GetObject("aboutButton.Image")));
+            this.aboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.aboutButton.Name = "aboutButton";
+            this.aboutButton.Size = new System.Drawing.Size(30, 30);
+            this.aboutButton.Text = "About";
+            this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
             // listView1
             // 
@@ -189,31 +199,28 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusbarLabel,
             this.statusbarProgressBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 339);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 336);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(584, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(584, 25);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // statusbarLabel
             // 
+            this.statusbarLabel.AutoSize = false;
+            this.statusbarLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.statusbarLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.statusbarLabel.Name = "statusbarLabel";
-            this.statusbarLabel.Size = new System.Drawing.Size(0, 17);
+            this.statusbarLabel.Size = new System.Drawing.Size(150, 20);
+            this.statusbarLabel.Text = "Ready";
+            this.statusbarLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // statusbarProgressBar
             // 
             this.statusbarProgressBar.Name = "statusbarProgressBar";
-            this.statusbarProgressBar.Size = new System.Drawing.Size(100, 16);
-            // 
-            // aboutButton
-            // 
-            this.aboutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.aboutButton.Image = ((System.Drawing.Image)(resources.GetObject("aboutButton.Image")));
-            this.aboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.aboutButton.Name = "aboutButton";
-            this.aboutButton.Size = new System.Drawing.Size(30, 30);
-            this.aboutButton.Text = "toolStripButton1";
-            this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
+            this.statusbarProgressBar.Size = new System.Drawing.Size(100, 19);
             // 
             // MainForm
             // 
